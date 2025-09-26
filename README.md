@@ -19,6 +19,8 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
    npm install
    ```
 
+
+
 2. **Set up environment variables**:
    Create a `.env` file in the root directory:
    ```
@@ -58,21 +60,29 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 ## Usage
 
-1. **Start the server**:
-   ```bash
-   # Development mode with auto-restart
-   npm run dev_admin
-   
-   # Production mode
-   npm start_admin
-   ```
+1. **Start the servers**:
+
+   # Admin server
+   npm run dev_admin   # Käynnistää admin-palvelimen kehitystilassa (automaattinen uudelleenkäynnistys, näkee virheet konsolissa)
+   npm start admin     # Käynnistää admin-palvelimen tuotantotilassa
+
+   # Game server
+   npm run dev game    # Käynnistää pelipalvelimen kehitystilassa (automaattinen uudelleenkäynnistys)
+   npm start game      # Käynnistää pelipalvelimen tuotantotilassa
 
 2. **Access the admin panel**:
-   Open your browser and go to `http://localhost:3000`
+   Open your browser and go to `http://localhost:3030`
+
+2. **Game/user panel**:
+   Open your browser and go to `http://localhost:3000`   
 
 3. **Login**:
+   Admin:
    - Username: `admin`
    - Password: `your_password` (or whatever you set)
+   User:
+   - Email: `player1@example.com.invalid`
+   - Password: `player123`
 
 ## Security Notes
 
