@@ -186,6 +186,18 @@
             gap: 1rem;
             margin-top: 1rem;
         }
+
+        .dashboard-rows {
+            display: flex;
+            flex-direction: column; 
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .dashboard-rows .card {
+            width: 100%;
+            text-align: left;
+        }
         
         .card {
             background: white;
@@ -262,23 +274,39 @@
     <% if (typeof userNick !== 'undefined' && typeof hideNav === 'undefined') { %>
     <div class="nav">
         <a href="/admin">Dashboard</a>
-        <a href="/admin/users">Admin Users</a>
-        <a href="/admin/player">Players</a>
-        <a href="/admin/realm">Realms</a>
-        <a href="/admin/unit_type">Unit Types</a>
-        <a href="/admin/keywords">Keywords</a>
-        <a href="/admin/unit_classes">Unit Classes</a>
-        <a href="/admin/terrain_types">Terrain Types</a>
-        <a href="/admin/map">Map Tiles</a>
-        <a href="/admin/army">Armies</a>
-        <a href="/admin/unit">Units</a>
-        <a href="/admin/game_turns">Game Turns</a>
-        <a href="/admin/commands">Commands</a>
 
         <div class="user-info">
         <%= userNick %><a href="/logout">Logout</a>
         </div>
     </div>
+
+    <!-- Dashboard cards moved under nav, displayed as rows -->
+    <div class="dashboard-rows container">
+        <div class="card">
+            <h3>Game admin</h3>
+            <p>
+                <a class="btn btn-primary btn-sm" href="/admin/users">Admin Users</a>
+                <a class="btn btn-primary btn-sm" href="/admin/player">Players</a>
+                <a class="btn btn-primary btn-sm" href="/admin/realm">Realms</a>
+                <a class="btn btn-primary btn-sm" href="/admin/army">Armies</a>
+                <a class="btn btn-primary btn-sm" href="/admin/unit">Units</a>
+                <a class="btn btn-primary btn-sm" href="/admin/game_turns">Game Turns</a>
+                <a class="btn btn-primary btn-sm" href="/admin/commands">Commands</a>
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Meta information</h3>
+            <p>
+                <a class="btn btn-success btn-sm" href="/admin/unit_type">Unit Types</a>
+                <a class="btn btn-success btn-sm" href="/admin/unit_classes">Unit Classes</a>
+                <a class="btn btn-success btn-sm" href="/admin/keywords">Keywords</a>
+                <a class="btn btn-success btn-sm" href="/admin/terrain_types">Terrain Types</a>
+                <a class="btn btn-success btn-sm" href="/admin/map">Map Tiles</a>
+            </p>
+        </div>
+    </div>
+    
     <% } %>
     
     <div class="container">
